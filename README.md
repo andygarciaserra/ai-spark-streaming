@@ -44,7 +44,7 @@ Además, durante el procesamiento también:
                         └── simulation/
 ```
 
-También durante la ejecución, el proyecto genera los siguientes archivos (por limpieza los incluimos en `.gitignore`)
+También durante la ejecución, el proyecto genera los siguientes archivos (por limpieza los incluimos en `.gitignore` ):
 
 ```
 target/
@@ -68,7 +68,7 @@ El proyecto se ha desarrollado utilizando:
 - Apache Kafka 0.8.2.1
 - sbt
 
-Antes de compilar o ejecutar el proyecto es necesario cargar las variables de entorno:
+Antes de compilar o ejecutar es necesario cargar las variables de entorno:
 
 ```bash
 source ./env.sh
@@ -85,7 +85,7 @@ source ./env.sh
 sbt clean assembly
 ```
 
-Al finalizar se generará:
+Al finalizar genera:
 
 ```
 target/scala-2.11/anomalyDetection-assembly-1.0.jar
@@ -117,6 +117,14 @@ threshold
 clustering_bisect/
 threshold_bisect
 ```
+
+Pueden explorarse los umbrales de detección de anomalías:
+
+```
+cat threshold
+cat threshold_bisect
+```
+
 
 ---
 
@@ -299,4 +307,4 @@ Esta configuración es completamente opcional y únicamente pretende facilitar l
 
 - Los modelos entrenados se generan automáticamente mediante `start_training.sh`.
 - Los modelos, checkpoints y demás archivos temporales no se incluyen en el repositorio y pueden regenerarse en cualquier momento.
-- Se ha mantenido la estructura original del proyecto proporcionada en el enunciado, simplificando el código y los scripts para facilitar su comprensión y reproducción.
+- Se ha mantenido la estructura original del proyecto proporcionada en el enunciado, simplificando y comentando en la medida de lo posible el código y los scripts para facilitar su comprensión y reproducción.
