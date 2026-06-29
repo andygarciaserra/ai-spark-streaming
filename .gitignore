@@ -9,10 +9,10 @@ spark-warehouse/
 *.log
 
 # Trained models generated locally
-clustering/
-clustering_bisect/
-threshold
-threshold_bisect
+/clustering/
+/clustering_bisect/
+/threshold
+/threshold_bisect
 
 # OS/editor
 .DS_Store
