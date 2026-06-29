@@ -2,7 +2,7 @@
 
 source ./env.sh
 
-FILE="../resources/production.csv"
+FILE="resources/production.csv"
 JAR="target/scala-2.11/anomalyDetection-assembly-1.0.jar"
 
 echo "Sending production data to Kafka..."

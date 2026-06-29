@@ -7,7 +7,7 @@
 source ./env.sh
 
 JAR="target/scala-2.11/anomalyDetection-assembly-1.0.jar"
-DATA="../resources/training.csv"
+DATA="resources/training.csv"
 
 echo "Training KMeans and Bisecting KMeans models..."
 
