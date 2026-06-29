@@ -1,7 +1,7 @@
 # Detección de anomalías en facturas mediante Spark Streaming
 
 **Máster Universitario en Investigación en Inteligencia Artificial (UIMP)**  
-**Asignatura: Big Data – Práctica Spark Streaming**
+**Big Data – Práctica Spark Streaming**
 
 ---
 
@@ -44,7 +44,7 @@ Además, durante el procesamiento también:
                         └── simulation/
 ```
 
-Los siguientes directorios y archivos se generan automáticamente durante la ejecución y no forman parte del repositorio:
+También durante la ejecución, el proyecto genera los siguientes archivos (por limpieza los incluimos en `.gitignore`)
 
 ```
 target/
@@ -244,13 +244,13 @@ Añadiendo las siguientes líneas al archivo `~/.bashrc` es posible lanzar cada 
 ```bash
 export BD_PROJECT_HOME="/ruta/al/proyecto/codigo-sparkinvoice"
 
-alias bd-zk='gnome-terminal --title="🟢 01 Zookeeper" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && \$KAFKA_HOME/bin/zookeeper-server-start.sh \$KAFKA_HOME/config/zookeeper.properties; exec bash"'
+alias bd-zk='gnome-terminal --title="01 - Zookeeper" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && \$KAFKA_HOME/bin/zookeeper-server-start.sh \$KAFKA_HOME/config/zookeeper.properties; exec bash"'
 
-alias bd-kafka='gnome-terminal --title="🟡 02 Kafka Broker" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && \$KAFKA_HOME/bin/kafka-server-start.sh \$KAFKA_HOME/config/server.properties; exec bash"'
+alias bd-kafka='gnome-terminal --title="02 - Kafka Broker" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && \$KAFKA_HOME/bin/kafka-server-start.sh \$KAFKA_HOME/config/server.properties; exec bash"'
 
-alias bd-pipeline='gnome-terminal --title="🔵 03 Spark Pipeline" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && ./start_pipeline.sh; exec bash"'
+alias bd-pipeline='gnome-terminal --title="03 - Spark Pipeline" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && ./start_pipeline.sh; exec bash"'
 
-alias bd-producer='gnome-terminal --title="🟣 04 Producer" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && ./productiondata.sh; exec bash"'
+alias bd-producer='gnome-terminal --title="04 - Producer" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && ./productiondata.sh; exec bash"'
 ```
 
 Después de modificar el archivo:
@@ -259,7 +259,7 @@ Después de modificar el archivo:
 source ~/.bashrc
 ```
 
-Cada componente puede lanzarse individualmente mediante:
+Cada temrinal puede lanzarse individualmente:
 
 ```bash
 bd-zk
@@ -268,7 +268,7 @@ bd-pipeline
 bd-producer
 ```
 
-También puede añadirse la siguiente función para iniciar todo el sistema automáticamente:
+En nuestro caso diseñamos la siguiente función que lanza todas las terminales:
 
 ```bash
 bd-run() {
@@ -285,13 +285,13 @@ bd-run() {
 }
 ```
 
-Una vez añadida la función, todo el sistema puede arrancarse simplemente con:
+De tal forma que podemos tener el sistema de 4 elementos corriendo con un solo comando:
 
 ```bash
 bd-run
 ```
 
-Esta configuración es completamente opcional y únicamente pretende facilitar la ejecución local del proyecto.
+Esta configuración es completamente opcional y únicamente pretende facilitar la ejecución local del proyecto, que en nuestro caso ha sido de gran utilidad.
 
 ---
 
