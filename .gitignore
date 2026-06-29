@@ -1,0 +1,21 @@
+# Build
+target/
+project/project/
+project/target/
+
+# Spark runtime
+checkpoint/
+spark-warehouse/
+*.log
+
+# Trained models generated locally
+clustering/
+clustering_bisect/
+threshold
+threshold_bisect
+
+# OS/editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
