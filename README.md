@@ -32,6 +32,9 @@ Además, durante el procesamiento también:
 ├── start_training.sh
 ├── start_pipeline.sh
 ├── productiondata.sh
+├── resources
+    ├── production.csv
+    └── training.csv
 ├── project/
 └── src/
     └── main/
