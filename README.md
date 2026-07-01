@@ -3,7 +3,7 @@
 **Máster Universitario en Investigación en Inteligencia Artificial (UIMP)**  
 **Big Data – Práctica Spark Streaming**
 
-📁 **Repositorio del proyecto:** https://github.com/andygarciaserra/ai-spark-streaming
+**Repositorio del proyecto:** https://github.com/andygarciaserra/ai-spark-streaming
 
 ---
 
@@ -255,15 +255,41 @@ Durante el desarrollo se utilizaron varios aliases de Bash para facilitar la pue
 Añadiendo las siguientes líneas al archivo `~/.bashrc` es posible lanzar cada componente en una terminal independiente.
 
 ```bash
-export BD_PROJECT_HOME="/ruta/al/proyecto/codigo-sparkinvoice"
+export BD_PROJECT_HOME="/ruta/al/proyecto/ai-spark-streaming"
 
-alias bd-zk='gnome-terminal --title="01 - Zookeeper" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && \$KAFKA_HOME/bin/zookeeper-server-start.sh \$KAFKA_HOME/config/zookeeper.properties; exec bash"'
+bd-zk() {
+  gnome-terminal --title="01 Zookeeper" -- bash -lc "
+    cd \"$BD_PROJECT_HOME\" &&
+    source ./env.sh &&
+    \$KAFKA_HOME/bin/zookeeper-server-start.sh \
+      \$KAFKA_HOME/config/zookeeper.properties;
+    exec bash"
+}
 
-alias bd-kafka='gnome-terminal --title="02 - Kafka Broker" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && \$KAFKA_HOME/bin/kafka-server-start.sh \$KAFKA_HOME/config/server.properties; exec bash"'
+bd-kafka() {
+  gnome-terminal --title="02 Kafka Broker" -- bash -lc "
+    cd \"$BD_PROJECT_HOME\" &&
+    source ./env.sh &&
+    \$KAFKA_HOME/bin/kafka-server-start.sh \
+      \$KAFKA_HOME/config/server.properties;
+    exec bash"
+}
 
-alias bd-pipeline='gnome-terminal --title="03 - Spark Pipeline" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && ./start_pipeline.sh; exec bash"'
+bd-pipeline() {
+  gnome-terminal --title="03 Spark Pipeline" -- bash -lc "
+    cd \"$BD_PROJECT_HOME\" &&
+    source ./env.sh &&
+    ./start_pipeline.sh;
+    exec bash"
+}
 
-alias bd-producer='gnome-terminal --title="04 - Producer" -- bash -lc "cd \"$BD_PROJECT_HOME\" && source ./env.sh && ./productiondata.sh; exec bash"'
+bd-producer() {
+  gnome-terminal --title="04 Producer" -- bash -lc "
+    cd \"$BD_PROJECT_HOME\" &&
+    source ./env.sh &&
+    ./productiondata.sh;
+    exec bash"
+}
 ```
 
 Después de modificar el archivo:
