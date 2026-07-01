@@ -3,6 +3,8 @@
 **Máster Universitario en Investigación en Inteligencia Artificial (UIMP)**  
 **Big Data – Práctica Spark Streaming**
 
+📁 **Repositorio del proyecto:** https://github.com/andygarciaserra/ai-spark-streaming
+
 ---
 
 # Descripción
